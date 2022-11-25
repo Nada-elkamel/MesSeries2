@@ -1,0 +1,38 @@
+<div class="container">
+    <div>
+    <h2>Ajouter une Serie :</h2>
+    </div>
+    <form >
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >ID Serie</label>
+        <input type="text" [(ngModel)]="newSerie.idSerie" name="idSerie" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom Serie</label>
+        <input type="text"[(ngModel)]= "newSerie.nomSerie"
+        name="nomSerie" class="form-control">
+        </div>
+        
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Date Diffusion</label>
+        <input type="date" [(ngModel)]= "newSerie.dateCreation"
+        name="dateCreation" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label >Langue</label>
+            <input type="text" [(ngModel)]= "newSerie.langue"
+            name="langue " class="form-control">
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <label>Type</label>
+                <select class="form-control form-control-lg" id="idType" name="idType" [(ngModel)]="newIdType">
+                    <option *ngFor="let type of types" [value]="type.idType">
+                        {{type.nomTy}}
+                    </option>
+                </select>
+            </div>
+        <div class="mt-2">
+        <button type="submit" (click)="addSerie()"class="btn btn-success">Ajouter</button>
+        </div>
+        </form>
+        </div>
